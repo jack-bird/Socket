@@ -19,13 +19,13 @@ $global_uid = 0;
 //}
 
 // 当客户端发送消息过来时，转发给所有人
-function handle_message($connection, $data)
+function onMessage($connection, $data)
 {
-//    global $text_worker;
-//    foreach($text_worker->connections as $conn)
-//    {
+    global $text_worker;
+    foreach($text_worker->connections as $conn)
+    {
         $conn->send("$data");
-//    }
+    }
 }
 
 // 当客户端断开时，广播给所有客户端
@@ -45,7 +45,7 @@ $text_worker = new Worker("websocket://0.0.0.0:2347");
 $text_worker->count = 1;
 
 $text_worker->onConnect = 'handle_connection';
-$text_worker->onMessage = 'handle_message';
+//$text_worker->onMessage = 'handle_message';
 $text_worker->onClose = 'handle_close';
 
 Worker::runAll();
