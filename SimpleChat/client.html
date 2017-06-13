@@ -73,9 +73,10 @@
                     alert("连接成功");
                     so.send(name);
                     alert("你的名称是:"+n);
-//                if(so.readyState==1){
-//                    so.send('type=add&ming='+n);
-//                }
+            }
+
+            so.onConnect=function(e){
+                alert("你绑定的用户名称:" + e.date);
             }
 
             so.onclose=function(){
