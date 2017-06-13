@@ -58,6 +58,7 @@
     (function(){
         var key='all',mkey;
         var users={};
+        var name = {};
         var url='ws://127.0.0.1:8000';
         var so=false,n=false;
         var lus=A.$('us'),lct=A.$('ct');
@@ -67,11 +68,15 @@
             if(!n){
                 return ;
             }
+            name['name']=n;
             so=new WebSocket(url);
             so.onopen=function(){
-                if(so.readyState==1){
-                    so.send('type=add&ming='+n);
-                }
+                    alert("连接成功");
+                    ws.send(name);
+                    alert("你的名称是:"+n);
+//                if(so.readyState==1){
+//                    so.send('type=add&ming='+n);
+//                }
             }
 
             so.onclose=function(){
