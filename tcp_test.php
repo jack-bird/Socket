@@ -6,7 +6,7 @@
  * Time: 10:53
  */
 use Workerman\Worker;
-require_once __DIR__.'\Workerman\Autoloader.php';
+require_once __DIR__.'/Workerman/Autoloader.php';
 
 $tcp_worker = new Worker("tcp://0.0.0.0:2347");
 
