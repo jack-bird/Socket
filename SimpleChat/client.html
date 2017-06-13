@@ -71,7 +71,7 @@
             so=new WebSocket("ws://180.76.242.213:2347");
             so.onopen=function(){
                     alert("连接成功");
-                    ws.send(name);
+                    so.send(name);
                     alert("你的名称是:"+n);
 //                if(so.readyState==1){
 //                    so.send('type=add&ming='+n);
