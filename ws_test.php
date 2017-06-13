@@ -6,7 +6,7 @@
  * Time: 10:34
  */
 use Workerman\Worker;
-require __DIR__.'Workerman\Autoloader.php';
+require_once __DIR__.'/Workerman/Autoloader.php';
 
 $ws_worker = new Worker("websocket://0.0.0.0:2346");
 
