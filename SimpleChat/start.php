@@ -21,11 +21,11 @@ $global_uid = 0;
 // 当客户端发送消息过来时，转发给所有人
 function handle_message($connection, $data)
 {
-    global $text_worker;
-    foreach($text_worker->connections as $conn)
-    {
+//    global $text_worker;
+//    foreach($text_worker->connections as $conn)
+//    {
         $conn->send("$data");
-    }
+//    }
 }
 
 // 当客户端断开时，广播给所有客户端
