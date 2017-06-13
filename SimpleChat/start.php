@@ -12,11 +12,11 @@ require_once '../Workerman/Autoloader.php';
 $global_uid = 0;
 
 // 当客户端连上来时分配uid，并保存连接，并通知所有客户端
-function handle_connection($connection,$data)
-{
-    //获取用户传过来的信息
-    $connection->send($data);
-}
+//function handle_connection($connection,$data)
+//{
+//    //获取用户传过来的信息
+//    $connection->send($data);
+//}
 
 // 当客户端发送消息过来时，转发给所有人
 function handle_message($connection, $data)
@@ -24,7 +24,7 @@ function handle_message($connection, $data)
     global $text_worker;
     foreach($text_worker->connections as $conn)
     {
-        $conn->send("user[{$connection->uid}] said: $data");
+        $conn->send("$data");
     }
 }
 
