@@ -55,20 +55,7 @@
 </script>
 <script src="http://www.yxsss.com/ui/p/a.js" type="text/javascript"></script>
 <script>
-    (function() {
-        var key = 'all', mkey;
-        var users = {};
-        var name = {};
-        var so = false, n = false;
-        var lus = A.$('us'), lct = A.$('ct');
-
-        function st() {
-            n = prompt('请给自己取一个响亮的名字：');
-            n = n.substr(0, 16);
-            if (!n) {
-                return;
-            }
-            name['name'] = n;
+            name['name'] = '菲儿';
             so = new WebSocket("ws://180.76.242.213:2347");
             so.onopen = function () {
                 alert("连接成功");
@@ -78,9 +65,7 @@
 
             so.onMessage = function (e) {
                 alert("XX绑定的用户名称:" + e.date);
-            }
-        }
-    });
+            };
 </script>
 </body>
 </html>
