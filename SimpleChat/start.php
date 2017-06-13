@@ -24,7 +24,7 @@ function onMessage($connection, $data)
 //    global $text_worker;
 //    foreach($text_worker->connections as $conn)
 //    {
-    $connection->send("$data");
+    $connection->send($data);
 //    }
 }
 
